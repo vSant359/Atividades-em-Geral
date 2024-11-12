@@ -11,23 +11,26 @@ alunos = [
 def adicionar_alunos():
     matricula = int(input("Digite aqui o número da nova matrícula: "))
     print(f'Ok, o número de matrícula será {matricula}')
-    nome = input("digite o nome do aluno: ")
-    idade = int(input("Digite aqui a idade do aluno: "))
-    ano = input("Digite aqui o ano em que ele está matriculado ex. 3º ano do Ensino Médio: ")
-    aluno = {"matrícula": matricula, "nome": nome, "idade": idade, "ano": ano}
-    alunos.append(aluno)
-    print(f'O aluno {nome} foi cadastrado com sucesso!')
-    voltar()
+    verificar = verificar_matricula(matricula)
+    if verificar:
+        print("Por favor, selecione outro número de matrícula")
+        adicionar_alunos()
+    else:
+        nome = input("digite o nome do aluno: ")
+        idade = int(input("Digite aqui a idade do aluno: "))
+        ano = input("Digite aqui o ano em que ele está matriculado ex. 3º ano do Ensino Médio: ")
+        aluno = {"matrícula": matricula, "nome": nome, "idade": idade, "ano": ano}
+        alunos.append(aluno)
+        print(f'O aluno {nome} foi cadastrado com sucesso!')
+        voltar()
 
 
-def ver_alunos(retornar_para_main=False):
+def ver_alunos():
     cabecalho = alunos[0].keys()
     linhas = [aluno.values() for aluno in alunos]
     print(tabulate(linhas, headers=cabecalho, tablefmt= "grid"))
 
-    if retornar_para_main:
-        input("\nPressione Enter para voltar ao menu principal...")
-        voltar()
+    
     
 
 def excluir_alunos():
@@ -83,8 +86,8 @@ def atualizar_aluno():
 
 
 def voltar(): #Decidi criar essa função porque assim eu consigo sempre exibir os alunos sem parar o código nem voltar para main sem querer e mantém o user no controle.
-    voltar = int(input("Pressione 1 para voltar ao menu ou qualquer tecla para sair: "))
-    if voltar == 1:
+    print("Pressione enter para voltar ao menu ou qualquer tecla para sair")
+    if input() == "":
         main()
     else:
         exit()
@@ -103,7 +106,7 @@ def main():
     if escolha == 1:
         adicionar_alunos()
     elif escolha == 2:
-        ver_alunos(retornar_para_main=True)
+        ver_alunos()
     elif escolha == 3:
         excluir_alunos()
     elif escolha == 4:
