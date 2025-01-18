@@ -4,7 +4,7 @@ const list = document.getElementById('lista')
 
 function createDiv() {
     if (text.value) {
-            let newDiv = document.createElement('div')
+        let newDiv = document.createElement('div')
         let newLi = document.createElement('li')
         let taskOk = document.createElement('input')
         let icon = document.createElement('span')
