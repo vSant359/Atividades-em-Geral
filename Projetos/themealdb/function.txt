@@ -1,0 +1,13 @@
+const meal = data.meals[0]; // Pegamos o primeiro item da lista
+
+const ingredientes = Object.keys(meal) // Pegamos todas as chaves
+    .filter(key => key.startsWith("strIngredient") && meal[key]) // Filtramos os ingredientes não vazios
+    .reduce((acc, key, index) => { // Transformamos em um array organizado
+        acc.push({
+            ingrediente: meal[key],
+            medida: meal[`strMeasure${index + 1}`] // Pegamos a medida correspondente
+        });
+        return acc;
+    }, []);
+
+console.log(ingredientes);
