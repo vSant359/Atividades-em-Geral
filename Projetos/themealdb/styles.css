@@ -37,7 +37,7 @@ select {
 
 .recipe img {
     width: 100%;
-    height: 200px; /* Altura fixa para todas as imagens */
+    height: 200px; 
     object-fit: cover; /* Garante que a imagem ocupe o espaço sem distorções */
     border-bottom: 4px solid #ddd; /* Adiciona uma borda para separação visual */
 }
