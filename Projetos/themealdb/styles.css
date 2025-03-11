@@ -1,8 +1,10 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    text-align: center;
     margin: 0;
     padding: 20px;
-    background-color: #f8f8f8;
 }
 
 h1 {
@@ -51,3 +53,5 @@ select {
     padding: 0 10px 10px;
     text-align: left;
 }
+
+
