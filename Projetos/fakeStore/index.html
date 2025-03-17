@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeStore E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>FakeStore E-commerce</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar produto...">
+            <select title="category" id="categoryFilter">
+                <option value="all">Todas as Categorias</option>
+            </select>
+            <input type="number" id="priceFilter" placeholder="Filtrar por preço">
+            <button id="filterBtn">Filtrar</button>
+        </div>
+    </header>
+
+    <!-- Peguei esse código apenas para vizualizar como ficará -->
+
+    <!-- Carrinho flutuante no topo -->
+    <div class="cart-icon">
+        <button id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount">0</span> <!-- Contador de itens no carrinho -->
+        </button>
+    </div>
+
+    <main>
+        <div id="productsContainer"></div>
+    </main>
+
+    <!-- Carrinho de Compras - Modal -->
+<div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+        <button id="closeCartBtn" class="close-cart-btn">&times;</button>
+        <h2>Seu Carrinho</h2>
+        <div id="cartItemsContainer">
+            <!-- Itens do Carrinho serão inseridos aqui dinamicamente -->
+        </div>
+        <div id="cartTotal">
+            <h3>Total: <span id="cartTotalPrice">R$ 0,00</span></h3>
+            <button id="checkoutBtn">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
